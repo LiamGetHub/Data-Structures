@@ -1,0 +1,21 @@
+g++ -o linkedlist main.cpp LinkedList.cpp
+./linkedlist.exe
+
+
+g++ -o linkedlist "main.cpp" "LinkedList.cpp"
+./linkedlist   # On Linux/macOS
+linkedlist.exe # On Windows (if using MinGW)
+
+Other functions to implement:
+1. insert at position
+2. reverse the linked list 
+3. get length
+4. find middle element
+5. check if the list is a palidrome
+6. remove duplicates
+7. check for a cycle (loop)
+8. merge two sorted lists
+9. sort the list
+10. convert list to vector/array
+
+
