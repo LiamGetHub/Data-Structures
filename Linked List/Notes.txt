@@ -1,10 +1,14 @@
-g++ -o linkedlist main.cpp LinkedList.cpp
-./linkedlist.exe
-
-
+for main:
 g++ -o linkedlist "main.cpp" "LinkedList.cpp"
 ./linkedlist   # On Linux/macOS
 linkedlist.exe # On Windows (if using MinGW)
+
+
+
+for tests:
+g++ -o test_LinkedList test_LinkedList.cpp LinkedList.cpp -Wall -Wextra -std=c++11
+./test_LinkedList
+
 
 Other functions to implement:
 1. insert at position
