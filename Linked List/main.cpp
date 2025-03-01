@@ -12,7 +12,7 @@ int main() {
    list.appendNode(list.createNode(7));
    list.appendNode(list.createNode(8));
    list.printList();
-   
+
 
    if (list.searchNode(1) == true){
         std::cout << "TEST 1 PASSES" << std::endl;
@@ -42,6 +42,19 @@ int main() {
     std::cout << "TEST 4 FAILED" << std::endl;
    }
 
+
+   
+   std::cout << "ORIGINAL LIST" << std::endl;
+   list.printList();
+   std::cout << "DELETE 1" << std::endl;
+   list.deleteNode(1);
+   list.printList();
+   std::cout << "DELETE 4" << std::endl;
+   list.deleteNode(4);
+   list.printList();
+   std::cout << "DELETE 8" << std::endl;
+   list.deleteNode(8);
+   list.printList();
 
 
     

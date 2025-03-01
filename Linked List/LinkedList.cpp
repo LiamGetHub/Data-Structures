@@ -5,7 +5,12 @@ Node::Node(int value) : data(value), nextNode(nullptr) {}
 LinkedList::LinkedList() : headPtr(nullptr) {}
 
 LinkedList::~LinkedList() {
-    // TODO: Implement destructor to free memory
+    Node* nodePtr = headPtr;
+    while (nodePtr != nullptr) {
+        Node* temp = nodePtr; // Save current node
+        nodePtr = nodePtr->nextNode; // Move to next node
+        delete temp; // Delete saved node
+    }
 }
 
 void LinkedList::printList() const {
@@ -78,4 +83,35 @@ bool LinkedList::searchNode(int value) {
 
 
 // need to implement:   void deleteNode(int value); 
-//need to implement:    bool searchNode(int value);
+
+void LinkedList::deleteNode(int value) {
+    // If list is empty
+    if (headPtr == nullptr) {
+        std::cout << "List is empty" << std::endl;
+        return;
+    }
+
+    // If head node itself is the target
+    if (headPtr->data == value) {
+        Node* temp = headPtr;
+        headPtr = headPtr->nextNode;  // Move head to next node
+        delete temp;  // Delete the old head
+        return;
+    }
+
+    // Traverse list to find the node to delete
+    Node* nodePtr = headPtr;
+    Node* prevPtr = nullptr;
+
+    while (nodePtr != nullptr && nodePtr->data != value) {
+        prevPtr = nodePtr;
+        nodePtr = nodePtr->nextNode;
+    }
+
+    // If the value was found, remove the node
+    if (nodePtr != nullptr) {
+        prevPtr->nextNode = nodePtr->nextNode; // Unlink node
+        delete nodePtr;  // Free memory
+    }
+}
+
