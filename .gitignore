@@ -1,0 +1,33 @@
+# Ignore compiled binaries
+linkedlist
+linkedlist.exe
+
+# Ignore build directories
+/build/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+
+# Ignore temporary files
+*.o
+*.obj
+*.out
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Ignore IDE-specific files
+.vscode/
+*.code-workspace
+*.sublime-workspace
+.idea/
+*.iml
+*.DS_Store  # macOS
+Thumbs.db   # Windows
+
+# Ignore CMake-generated files
+CMakeLists.txt.user
+
+# Ignore dependency files
+*.d
