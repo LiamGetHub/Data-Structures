@@ -6,14 +6,14 @@
 class Node {
 public:
     int data;
-    Node* next;
+    Node* nextNode;
 
     Node(int value);
 };
 
 class LinkedList {
 private:
-    Node* head;
+    Node* headPtr;
 
 public:
     LinkedList();
@@ -22,8 +22,10 @@ public:
     void printList() const; // Provided as an example, you can implement more
 
     // TODO: Implement functions in LinkedList.cpp
-    void addNode(int value); 
+    Node* createNode(int value);
+    void appendNode(Node* newNode);
     void deleteNode(int value); 
+    bool searchNode(int value);
 };
 
 #endif // LINKEDLIST_H
