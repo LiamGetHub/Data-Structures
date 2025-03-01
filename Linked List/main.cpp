@@ -8,12 +8,42 @@ int main() {
    list.appendNode(list.createNode(2));
    list.appendNode(list.createNode(4));
    list.appendNode(list.createNode(5));
-   list.appendNode(list.createNode(3));
-   list.appendNode(list.createNode(2));
-   list.appendNode(list.createNode(5));
+   list.appendNode(list.createNode(6));
+   list.appendNode(list.createNode(7));
+   list.appendNode(list.createNode(8));
+   list.printList();
+   
+
+   if (list.searchNode(1) == true){
+        std::cout << "TEST 1 PASSES" << std::endl;
+   }
+   else {
+    std::cout << "TEST 1 FAILED" << std::endl;
+   }
+
+   if (list.searchNode(5) == true){
+    std::cout << "TEST 2 PASSES" << std::endl;
+   }
+   else {
+    std::cout << "TEST 2 FAILED" << std::endl;
+   }
+
+   if (list.searchNode(8) == true){
+    std::cout << "TEST 3 PASSES" << std::endl;
+   }
+   else {
+    std::cout << "TEST 3 FAILED" << std::endl;
+   }
+
+   if (list.searchNode(10) == false){
+    std::cout << "TEST 4 PASSES" << std::endl;
+   }
+   else {
+    std::cout << "TEST 4 FAILED" << std::endl;
+   }
 
 
 
-    list.printList(); // Should print an empty list
+    
     return 0;
 }

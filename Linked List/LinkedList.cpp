@@ -17,19 +17,28 @@ void LinkedList::printList() const {
     std::cout << "nullptr" << std::endl;
 }
 
+Node* LinkedList::createNode(int value)
+{
+    Node* newNode = new Node(value);
+    std::cout << "Created Node with value: " << newNode->data << " at address: " << newNode << std::endl;
+    return newNode;
+}
+
 void LinkedList::appendNode(Node* newNode){
     if (!newNode) {
         std::cout << "Attempted to append a nullptr node!" << std::endl;
         return;
     }
 
-    if (headPtr == nullptr) // if the list is empty
-    {
+    // if the list is empty
+    if (headPtr == nullptr) { 
+    
         headPtr = newNode;
         std::cout << "List was empty. Set headPtr to: " << headPtr->data << std::endl;
     }
-    else 
-    {
+
+    // go to end of the list
+    else {
         Node* nodePtr = headPtr;
         while (nodePtr->nextNode != nullptr)
         {
@@ -40,13 +49,33 @@ void LinkedList::appendNode(Node* newNode){
     }
 }
 
+bool LinkedList::searchNode(int value) {
+    Node * nodePtr = headPtr;
 
-Node* LinkedList::createNode(int value)
-{
-    Node* newNode = new Node(value);
-    std::cout << "Created Node with value: " << newNode->data << " at address: " << newNode << std::endl;
-    return newNode;
+    //if the ist is empty
+    if (headPtr == nullptr) {
+        return false;
+    }
+
+    //check first node cuz we dont in the while loop
+    if (headPtr->data == value){
+        return true;
+    }
+
+    //if not empty, iterate through list
+    else {
+        //iterates through the list
+        while (nodePtr->nextNode != nullptr) {
+
+            if (nodePtr->nextNode->data == value){
+                return true; //found
+            }
+            nodePtr = nodePtr->nextNode;
+        }
+        return false; //not found && at end of list
+    }
 }
+
 
 // need to implement:   void deleteNode(int value); 
 //need to implement:    bool searchNode(int value);
