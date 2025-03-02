@@ -115,3 +115,26 @@ void LinkedList::deleteNode(int value) {
     }
 }
 
+void LinkedList::insertAt(int value, int position) {
+    Node* newNode = new Node(value);
+
+    if (position == 0) { // Insert at head
+        newNode->nextNode = headPtr;
+        headPtr = newNode;
+        return;
+    }
+
+    Node* nodePtr = headPtr;
+    for (int i = 0; nodePtr != nullptr && i < position - 1; i++) {
+        nodePtr = nodePtr->nextNode;
+    }
+
+    if (nodePtr == nullptr) {
+        std::cout << "Position out of bounds!" << std::endl;
+        delete newNode;
+        return;
+    }
+
+    newNode->nextNode = nodePtr->nextNode;
+    nodePtr->nextNode = newNode;
+}
