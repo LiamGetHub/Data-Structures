@@ -43,7 +43,7 @@ int main() {
    }
 
 
-   
+
    std::cout << "ORIGINAL LIST" << std::endl;
    list.printList();
    std::cout << "DELETE 1" << std::endl;
@@ -55,6 +55,15 @@ int main() {
    std::cout << "DELETE 8" << std::endl;
    list.deleteNode(8);
    list.printList();
+
+   // insert at test
+
+   list.printList();
+   std::cout << "SIZE: " << list.getLength() << std::endl;
+   
+   
+   
+
 
 
     

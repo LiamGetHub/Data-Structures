@@ -26,6 +26,8 @@ public:
     void appendNode(Node* newNode);
     void deleteNode(int value); 
     bool searchNode(int value);
+    void insertAt(int value, int position);
+    int getLength();
 };
 
 #endif // LINKEDLIST_H

@@ -138,3 +138,23 @@ void LinkedList::insertAt(int value, int position) {
     newNode->nextNode = nodePtr->nextNode;
     nodePtr->nextNode = newNode;
 }
+
+//I could also implement this in the constructor and destructor for a node.
+int LinkedList::getLength() {
+    Node* nodePtr = nullptr;
+    nodePtr = headPtr;
+
+    int count = 0;
+
+    //list empty
+    if (headPtr == nullptr){
+        return 0;
+    }
+
+    do {
+        count++;
+        nodePtr = nodePtr->nextNode;
+    } while (nodePtr != nullptr);
+
+    return count;
+}
